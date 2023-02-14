@@ -1,0 +1,76 @@
+.container {
+  margin-top: 0 !important;
+  margin-bottom: 2rem;
+}
+
+.card {
+  margin: 1rem .5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 0px #b3b3b3;
+}
+
+.builder {
+  overflow-y: scroll;
+  height: 95vh;
+}
+
+.preview {
+  overflow-y: scroll;
+  height: 95vh;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.form {
+  padding: 1rem;
+}
+
+.heading-text {
+  font-size: 24px;
+  font-weight: bold;
+  padding: .5rem .5rem 0 .5rem;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.date {
+  width: 48% !important;
+}
+
+.add-button {
+  margin-left: .5rem;
+  margin-bottom: 2rem;
+}
+
+.builder::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+.builder::-webkit-scrollbar-track {
+  background-color: #e4e4e4 !important;
+  border-radius: 100px !important;
+}
+
+.builder::-webkit-scrollbar-thumb {
+  background-color: #d4aa70 !important;
+  border-radius: 100px !important;
+}
+
+.preview::-webkit-scrollbar {
+  width: 10px !important;
+}
+
+.preview::-webkit-scrollbar-track {
+  background-color: #e4e4e4 !important;
+  border-radius: 100px !important;
+}
+
+.preview::-webkit-scrollbar-thumb {
+  background-color: #d4aa70 !important;
+  border-radius: 100px !important;
+}

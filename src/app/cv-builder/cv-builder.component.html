@@ -1,1 +1,139 @@
-<p>cv-builder works!</p>
+<div class="grid container builder">
+  <div class="col builder">
+    <div class="form" [formGroup]="cvForm">
+      <div class="container">
+        <p class="heading-text">{{'Identity' | uppercase}}</p>
+        <div class="card grid">
+          <mat-form-field appearance="outline" class="col-12">
+            <mat-label>{{'Name'}}</mat-label>
+            <input matInput formControlName="name">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="col-12">
+            <mat-label>{{'Telp'}}</mat-label>
+            <input matInput formControlName="telp">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="col-12">
+            <mat-label>{{'Email'}}</mat-label>
+            <input matInput formControlName="email">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="col-12">
+            <mat-label>{{'Address'}}</mat-label>
+            <textarea matInput formControlName="address" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="3"></textarea>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="col-12">
+            <mat-label>{{'About Me'}}</mat-label>
+            <textarea matInput formControlName="about" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="3"></textarea>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <div class="container" formArrayName="experience">
+        <p class="heading-text">{{'Experience' | uppercase}}</p>
+        <ng-container *ngFor="let exp of getCvExperience().controls; let expIndex = index">
+          <div class="card grid" [formGroupName]="expIndex">
+
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Title'}}</mat-label>
+              <input matInput formControlName="title">
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Company Name'}}</mat-label>
+              <input matInput formControlName="company">
+            </mat-form-field>
+      
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Location'}}</mat-label>
+              <input matInput formControlName="location">
+            </mat-form-field>
+    
+            <div class="flex w-full">
+              <mat-form-field appearance="outline" class="col-6 date">
+                <mat-label>{{'Start Date'}}</mat-label>
+                <input matInput formControlName="startDate" [matDatepicker]="startDate">
+                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                <mat-datepicker #startDate color="primary"></mat-datepicker>
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline" class="col-6 date">
+                <mat-label>{{'End Date'}}</mat-label>
+                <input matInput formControlName="endDate" [matDatepicker]="endDate">
+                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                <mat-datepicker #endDate color="primary"></mat-datepicker>
+              </mat-form-field>
+            </div>
+    
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Description'}}</mat-label>
+              <textarea matInput formControlName="description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="3"></textarea>
+            </mat-form-field>
+          </div>
+        </ng-container>
+        <button mat-raised-button class="add-button" color="primary" (click)="addCvExperience()"><mat-icon>add</mat-icon>{{'Add Experience'}}</button>
+      </div>
+
+      <div class="container" formArrayName="education">
+        <p class="heading-text">{{'Education' | uppercase}}</p>
+        <ng-container *ngFor="let edu of getCvEducation().controls; let eduIndex = index">
+          <div class="card grid" [formGroupName]="eduIndex">
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'School'}}</mat-label>
+              <input matInput formControlName="school">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Degree'}}</mat-label>
+              <input matInput formControlName="degree">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="field col-12">
+              <mat-label>{{'Field of study'}}</mat-label>
+              <input matInput formControlName="field">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="field col-12">
+              <mat-label>{{'Grade'}}</mat-label>
+              <input matInput formControlName="grade">
+            </mat-form-field>
+    
+            <div class="flex w-full">
+              <mat-form-field appearance="outline" class="col-6 date">
+                <mat-label>{{'Start Date'}}</mat-label>
+                <input matInput formControlName="startDate" [matDatepicker]="startDateEducation" readonly (click)="startDateEducation.open()">
+                <mat-datepicker-toggle matSuffix [for]="startDateEducation"></mat-datepicker-toggle>
+                <mat-datepicker #startDateEducation color="primary"></mat-datepicker>
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline" class="col-6 date">
+                <mat-label>{{'End Date'}}</mat-label>
+                <input matInput formControlName="endDate" [matDatepicker]="endDateEducation">
+                <mat-datepicker-toggle matSuffix [for]="endDateEducation"></mat-datepicker-toggle>
+                <mat-datepicker #endDateEducation color="primary"></mat-datepicker>
+              </mat-form-field>
+            </div>
+    
+            <mat-form-field appearance="outline" class="col-12">
+              <mat-label>{{'Description'}}</mat-label>
+              <textarea matInput formControlName="description" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="2"
+                cdkAutosizeMaxRows="3"></textarea>
+            </mat-form-field>
+
+          </div>
+        </ng-container>
+        <button mat-raised-button class="add-button" color="primary" (click)="addCvEducation()"><mat-icon>add</mat-icon>{{'Add Education'}}</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="col preview">
+    <app-cv-preview [formValue]="cvFormValue"></app-cv-preview>
+  </div>
+</div>
