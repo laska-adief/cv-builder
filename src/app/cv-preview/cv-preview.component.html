@@ -1,1 +1,53 @@
-<p>cv-preview works!</p>
+<div class="container">
+  <div class="card">
+    <div class="identity">
+      <h2 class="name">{{formValue?.name}}</h2>
+      <p class="email">{{formValue?.email}}</p> 
+      <p class="telp">{{formValue?.telp}}</p> 
+      <p class="address">{{formValue?.address}}</p>
+    </div>
+    <hr>
+    <div class="about mb-4">
+      <h2 class="heading-text">{{'About Me'}}</h2>
+      <p class="text">{{formValue?.about}}</p>
+    </div>
+    <div class="experience">
+      <h2 class="heading-text">{{'Experience'}}</h2>
+      <ng-container *ngIf="formValue?.experience?.length">
+        <ng-container *ngFor="let exp of formValue.experience">
+          <p class="title">{{exp?.title}}</p>
+          <p class="company">{{exp?.company}}</p>
+          <span class="date">{{exp?.startDate | date}}</span> <span *ngIf="exp?.startDate && exp?.endDate"> - </span> <span class="date">{{exp?.endDate | date}}</span>
+          <p>{{exp.location}}</p>
+          <pre class="desc">
+{{exp?.description}}
+          </pre>
+        </ng-container>
+      </ng-container>
+    </div>
+    <div class="education">
+      <h2 class="heading-text">{{'Education'}}</h2>
+      <ng-container *ngIf="formValue?.education?.length">
+        <ng-container *ngFor="let edu of formValue?.education">
+          <p class="school">{{edu?.school}}</p>
+          <div>
+            <span class="degree">{{edu?.degree}}</span> <span *ngIf="edu?.degree && edu?.field">, </span> <span class="field">{{edu?.field}}</span>
+          </div>
+          <div>
+            <span class="date">{{edu?.startDate | date}}</span> <span *ngIf="edu?.startDate && edu?.endDate"> - </span> <span class="date">{{edu?.endDate | date}}</span>
+          </div>
+          <p class="grade">{{edu?.grade}}</p>
+          <pre class="desc">
+{{edu?.description}}
+          </pre>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<div class="download">
+  <button mat-icon-button (click)="downloadCv()">
+    <mat-icon>download</mat-icon>
+  </button>
+</div>
