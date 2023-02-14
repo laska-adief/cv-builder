@@ -1,0 +1,103 @@
+.container {
+  width: 94%;
+  padding: 2rem;
+  line-height: 1.5rem;
+}
+
+p {
+  // margin-bottom: 0 !important;
+}
+
+hr {
+  height: 5px;
+  border: 0;
+  background: #564138;
+  margin-bottom: 1rem;
+}
+
+.heading-text {
+  font-size: 56px;
+  margin-top: 4rem !important;
+  margin-bottom: 3rem !important;
+  color: #2E86AB;
+  font-weight: 900;
+}
+
+.identity {
+  text-align: center;
+  padding: .5rem;
+  .name {
+    font-size: 72px;
+    margin-bottom: 4rem !important;
+  }
+  
+  .email, 
+  .telp,
+  .address {
+    margin-bottom: 1.5rem !important;
+    font-size: 36px;
+  }
+}
+
+.about {
+  .text {
+    text-align: justify;
+    font-size: 28px;
+  }
+}
+
+.experience {
+  font-size: 28px;
+  line-height: 2rem;
+  .title {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  
+  .date {
+    color: #878686;
+  }
+  
+  .desc{
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    white-space: break-spaces;
+  }
+}
+
+.education {
+  font-size: 28px;
+  line-height: 2rem;
+  .school {
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  .date {
+    color: #878686;
+  }
+
+  .desc{
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    white-space: break-spaces;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1rem .5rem;
+  padding: 1.8rem;
+  border-radius: 4px;
+  // box-shadow: 0px 0px 8px 0px #b3b3b3;
+}
+
+.download {
+  position: fixed;
+  right: 80px;
+  bottom: 50px;
+  background: #F5F749;
+  color: #564138;
+  border-radius: 50%;
+}
