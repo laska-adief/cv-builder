@@ -1,5 +1,5 @@
 <div class="grid container builder">
-  <div class="col builder">
+  <div class="col-12 md:col-6 builder">
     <div class="form" [formGroup]="cvForm">
       <div class="container">
         <p class="heading-text">{{'Identity' | uppercase}}</p>
@@ -133,7 +133,7 @@
       </div>
     </div>
   </div>
-  <div class="col preview">
+  <div class="col-12 md:col-6 preview">
     <app-cv-preview [formValue]="cvFormValue"></app-cv-preview>
   </div>
 </div>

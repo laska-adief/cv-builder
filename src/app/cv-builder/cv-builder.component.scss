@@ -10,15 +10,15 @@
   box-shadow: 0px 0px 8px 0px #b3b3b3;
 }
 
-.builder {
-  overflow-y: scroll;
-  height: 95vh;
-}
+// .builder {
+//   overflow-y: scroll;
+//   height: 95vh;
+// }
 
-.preview {
-  overflow-y: scroll;
-  height: 95vh;
-}
+// .preview {
+//   overflow-y: scroll;
+//   height: 95vh;
+// }
 
 .no-padding {
   padding: 0 !important;
@@ -73,4 +73,16 @@
 .preview::-webkit-scrollbar-thumb {
   background-color: #d4aa70 !important;
   border-radius: 100px !important;
+}
+
+@media (min-width:768px) {
+  .builder {
+    overflow-y: scroll;
+    height: 95vh;
+  }
+  
+  .preview {
+    overflow-y: scroll;
+    height: 95vh;
+  }
 }
